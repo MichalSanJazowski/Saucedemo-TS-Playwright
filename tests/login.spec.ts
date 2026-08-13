@@ -3,7 +3,7 @@ import { users } from '../data/users';
 
 test.describe('Login tests', () => {
 
-    test('user can log in with valid credentials', async ({ page, loginPage }) => {
+    test('user can log in with valid credentials @smoke', async ({ page, loginPage }) => {
 
         await test.step('Open login page', async () => {
             await loginPage.open();
