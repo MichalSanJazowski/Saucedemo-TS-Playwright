@@ -59,7 +59,7 @@ test('user can sort products by price from High to Low and then back to Low to H
 
 });
 for (const product of Object.values(products)){
-    test(`product details navigation for ${product.name}`, async({inventoryPage, productDetailPage, page}) =>{
+    test(`product details navigation for ${product.name} @smoke`, async({inventoryPage, productDetailPage, page}) =>{
         await inventoryPage.openProduct(product.name);
         await productDetailPage.shouldHaveName(product.name);
         await productDetailPage.shouldHaveDescription(product.description);

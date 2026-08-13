@@ -27,7 +27,7 @@ test('user can delete 1 product from cart', async({inventoryPage, cartPage}) => 
 
 });
 
-test('user can add and delete 2 products from cart', async({inventoryPage, cartPage}) => {
+test('user can add and delete 2 products from cart @smoke', async({inventoryPage, cartPage}) => {
     await inventoryPage.addProduct(products.labsBackpack.name);
     await inventoryPage.addProduct(products.bikeLight.name);
     await inventoryPage.shouldHaveCartItemsCount(2);
