@@ -64,7 +64,7 @@ for (const product of Object.values(products)){
         await productDetailPage.shouldHaveName(product.name);
         await productDetailPage.shouldHaveDescription(product.description);
         await productDetailPage.shouldHavePrice(product.price);
-        await productDetailPage.shouldShowImage();
+        await productDetailPage.shouldShowdddImage();
         await productDetailPage.addToCart();
         await productDetailPage.shouldHaveCartItemsCount(1);
         await productDetailPage.backToProducts();
