@@ -4,12 +4,15 @@ import { BasePage } from './BasePage';
 
 export class CartPage extends BasePage {
     
-    private readonly cartBadge: Locator;    
+    private readonly cartBadge: Locator;
+    private readonly checkoutButton: Locator;  
 
     constructor (page: Page){
         super(page);        
 
-        this.cartBadge = this.page.locator('[data-test="shopping-cart-badge"]');        
+        this.cartBadge = this.page.locator('[data-test="shopping-cart-badge"]');
+        this.checkoutButton = this.page.getByRole('button', { name: 'Checkout' });
+               
     }   
     
     async removeProduct(productName:string): Promise<void>{
@@ -22,4 +25,7 @@ export class CartPage extends BasePage {
     async shouldContainProduct(name: string): Promise<void>{
         await expect(this.page.getByText(name)).toBeVisible();
     }
+    async proceedToCheckout(): Promise<void> {
+    await this.checkoutButton.click();
+}
 }

@@ -3,13 +3,15 @@ import { LoginPage } from '../pages/LoginPage';
 import { InventoryPage } from '../pages/InventoryPage';
 import { CartPage } from '../pages/CartPage';
 import { ProductDetailPage } from '../pages/ProductDetailPage';
+import { CheckoutPage } from '../pages/CheckoutPage';
 export { expect } from '@playwright/test';
 
 type AppFixtures = {
     loginPage: LoginPage;
     inventoryPage: InventoryPage;
     cartPage: CartPage;
-    productDetailPage: ProductDetailPage;  
+    productDetailPage: ProductDetailPage; 
+    checkoutPage: CheckoutPage; 
 
 };
 export const test = base.extend<AppFixtures>({
@@ -29,7 +31,11 @@ export const test = base.extend<AppFixtures>({
     productDetailPage: async ({ page }, use) => {
         const productDetailPage = new ProductDetailPage(page);
         await use(productDetailPage);  
-     },   
+     },
+     checkoutPage: async ({page},use) =>{
+        const checkoutPage = new CheckoutPage(page);
+        await use(checkoutPage);
+     } 
         
 });
 
